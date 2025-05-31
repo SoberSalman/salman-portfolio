@@ -435,9 +435,32 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
         <div className="text-center z-10">
-          <h1 className="text-7xl md:text-9xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-            SALMAN
-          </h1>
+          {/* Name and Picture Together */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+            {/* Profile Picture */}
+            <div className="w-48 h-48 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full p-1 hover:scale-105 transition-all duration-500">
+              <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/pfp.jpeg" 
+                  alt="Salman Ahmad"
+                  className="w-full h-full object-cover rounded-full"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="text-6xl items-center justify-center" style={{display: 'none'}}>👨‍💻</div>
+              </div>
+            </div>
+            
+            {/* Name */}
+            <div>
+              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+                SALMAN
+              </h1>
+            </div>
+          </div>
+          
           <h2 className="text-3xl md:text-5xl font-light mb-8 text-white/90 h-16">
             <span className="border-r-2 border-cyan-400 animate-pulse">
               {typedText}
@@ -484,28 +507,14 @@ const Portfolio = () => {
       {/* About Section */}
       <section id="about" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            About Me
+          <h2 className="text-5xl font-bold text-center mb-16">
+            <span className="bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
+              About Me
+            </span>
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full p-1 hover:scale-105 transition-all duration-500">
-                <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden">
-                  <img 
-                    src="/pfp.jpeg" 
-                    alt="Salman Ahmad"
-                    className="w-full h-full object-cover rounded-full"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="text-8xl items-center justify-center" style={{display: 'none'}}>👨‍💻</div>
-                </div>
-              </div>
-            </div>
-            
+            {/* Removed duplicate profile picture from About section since it's now in Hero */}
             <div className="space-y-6">
               <h3 className="text-3xl font-bold text-white">Passionate AI Engineer</h3>
               <p className="text-lg text-white/80 leading-relaxed">
@@ -523,11 +532,32 @@ const Portfolio = () => {
               </div>
               <div className="flex items-center space-x-4 text-white/70">
                 <Mail />
-                <span>salman2002rwp@gmail.com</span>
+                <span>salmanahmadaieng@gmail.com</span>
               </div>
               <div className="flex items-center space-x-4 text-white/70">
                 <Phone />
                 <span>+92 321 973 9387</span>
+              </div>
+            </div>
+            
+            {/* Education/Skills highlight section */}
+            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <h3 className="text-2xl font-bold text-white mb-6">Education & Focus</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-cyan-400">Bachelor of Science, Computer Science</h4>
+                  <p className="text-white/70">National University of Computer and Emerging Sciences</p>
+                  <p className="text-white/60">Islamabad, Pakistan</p>
+                </div>
+                <div className="mt-6">
+                  <h4 className="text-lg font-semibold text-purple-400 mb-3">Specializations</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-cyan-600/20 border border-cyan-400/30 rounded-full text-cyan-300 text-sm">Machine Learning</span>
+                    <span className="px-3 py-1 bg-purple-600/20 border border-purple-400/30 rounded-full text-purple-300 text-sm">Natural Language Processing</span>
+                    <span className="px-3 py-1 bg-pink-600/20 border border-pink-400/30 rounded-full text-pink-300 text-sm">Computer Vision</span>
+                    <span className="px-3 py-1 bg-emerald-600/20 border border-emerald-400/30 rounded-full text-emerald-300 text-sm">Cloud Computing</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -682,7 +712,7 @@ const Portfolio = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-6">
-              <a href="mailto:salman2002rwp@gmail.com" className="group bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-2xl hover:scale-105 transition-all duration-300 flex items-center space-x-3">
+              <a href="mailto:salmanahmadaieng@gmail.com" className="group bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-2xl hover:scale-105 transition-all duration-300 flex items-center space-x-3">
                 <Mail />
                 <span className="font-semibold">Email Me</span>
               </a>
@@ -738,7 +768,7 @@ const Portfolio = () => {
               <Linkedin />
             </a>
             <a 
-              href="mailto:salman2002rwp@gmail.com" 
+              href="mailto:salmanahmadaieng@gmail.com" 
               className="text-white/40 hover:text-cyan-400 transition-colors duration-300 hover:scale-110"
             >
               <Mail />

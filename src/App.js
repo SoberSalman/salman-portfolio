@@ -159,8 +159,8 @@ const Portfolio = () => {
       ],
       impact: "Automated customer service operations for multiple businesses, reducing response times by 70% while maintaining 95%+ customer satisfaction.",
       githubUrl: "https://github.com/SoberSalman/AutoEngageFYP",
-      demoUrl: "https://drive.google.com/drive/folders/1yEDuuTIgAuItZXyDx4ZBMtEA49SybUoh",
-      // liveUrl: "https://auto-engage.ai"
+      demoUrl: "https://demo-auto-engage.com",
+      liveUrl: null
     },
     {
       id: 'digital-coach',
@@ -300,19 +300,21 @@ const Portfolio = () => {
                 <p className="text-xl text-white/70 mb-8">{selectedProject.subtitle}</p>
                 <p className="text-lg text-white/80 leading-relaxed mb-8">{selectedProject.description}</p>
                 
-                {/* BUTTONS SECTION - THIS WAS MISSING! */}
+                {/* BUTTONS SECTION - NOW CONDITIONAL! */}
                 <div className="flex flex-wrap gap-4 mb-12">
-                  <a 
-                    href={selectedProject.liveUrl} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-cyan-600 to-purple-600 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 flex items-center space-x-2 text-white"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0 9c-5 0-9-4-9-9s4-9 9-9" />
-                    </svg>
-                    <span>Live Demo</span>
-                  </a>
+                  {selectedProject.liveUrl && (
+                    <a 
+                      href={selectedProject.liveUrl} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-cyan-600 to-purple-600 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 flex items-center space-x-2 text-white"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0 9c-5 0-9-4-9-9s4-9 9-9" />
+                      </svg>
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                   
                   {selectedProject.githubUrl && (
                     <a 
@@ -326,18 +328,29 @@ const Portfolio = () => {
                     </a>
                   )}
                   
-                  <a 
-                    href={selectedProject.demoUrl} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 flex items-center space-x-2 text-white"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                    <span>View Demo</span>
-                  </a>
+                  {selectedProject.demoUrl && (
+                    <a 
+                      href={selectedProject.demoUrl} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 flex items-center space-x-2 text-white"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      <span>View Demo</span>
+                    </a>
+                  )}
+                  
+                  {!selectedProject.liveUrl && !selectedProject.githubUrl && !selectedProject.demoUrl && (
+                    <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-white/60 flex items-center space-x-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span>Project Details Available Below</span>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-8">

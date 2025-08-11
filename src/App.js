@@ -197,7 +197,7 @@ const Portfolio = () => {
       ],
       impact: "Automated customer service operations for multiple businesses, reducing response times by 70% while maintaining 95%+ customer satisfaction.",
       githubUrl: "https://github.com/SoberSalman/AutoEngageFYP",
-      demoUrl: "https://github.com/SoberSalman/AutoEngageFYP#demo",
+      demoUrl: "https://www.loom.com/share/f54f4016a4df4bb3935d14a2054a6c54?sid=8086e055-ec05-438f-b1ab-b1683e56e66e",
       liveUrl: null,
       isVideo: false
     },
@@ -718,13 +718,19 @@ const Portfolio = () => {
                           </svg>
                         </a>
                       )}
-                      {project.isVideo && (
-                        <div className="flex items-center gap-1 text-red-400 text-sm">
+                      {project.isVideo && project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-red-400 hover:text-red-300 text-sm transition-colors duration-300"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
                           </svg>
                           Video Demo
-                        </div>
+                        </a>
                       )}
                     </div>
                   </div>

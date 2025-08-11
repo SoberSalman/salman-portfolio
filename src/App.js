@@ -177,7 +177,7 @@ const Portfolio = () => {
       ],
       impact: "Enabled organizations to extract insights from thousands of documents automatically, reducing research time by 80%.",
       githubUrl: "https://github.com/SoberSalman/Multimodal-RAG-System",
-      demoUrl: null,
+      demoUrl: "https://github.com/SoberSalman/Multimodal-RAG-System#demo",
       liveUrl: null,
       isVideo: false
     },
@@ -197,7 +197,7 @@ const Portfolio = () => {
       ],
       impact: "Automated customer service operations for multiple businesses, reducing response times by 70% while maintaining 95%+ customer satisfaction.",
       githubUrl: "https://github.com/SoberSalman/AutoEngageFYP",
-      demoUrl: "https://demo-auto-engage.com",
+      demoUrl: "https://github.com/SoberSalman/AutoEngageFYP#demo",
       liveUrl: null,
       isVideo: false
     },
@@ -217,7 +217,7 @@ const Portfolio = () => {
       ],
       impact: "Revolutionized classroom assessment processes across multiple educational institutions, saving thousands of hours in manual observation time.",
       githubUrl: null,
-      demoUrl: null,
+      demoUrl: "https://github.com/SoberSalman/DigitalCoachAI",
       liveUrl: null,
       isVideo: false
     },
@@ -237,7 +237,7 @@ const Portfolio = () => {
       ],
       impact: "Provided accessible translation services for Urdu-English language pairs, facilitating communication for millions of speakers.",
       githubUrl: null,
-      demoUrl: null,
+      demoUrl: "https://github.com/SoberSalman/NeuralTranslation",
       liveUrl: null,
       isVideo: false
     }
